@@ -1,0 +1,10 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'europe-west4-docker.pkg.dev/$PROJECT_ID/d-academy/sds24/llm-profile-finder',
+        '--label', 'commit=$SHORT_SHA',
+        '-f', '.binder/Dockerfile', '.' ]
+## without the images key, the image will not be pushed to the container registry
+images:
+- 'europe-west4-docker.pkg.dev/$PROJECT_ID/d-academy/sds24/llm-profile-finder'
+options:
+  logging: CLOUD_LOGGING_ONLY

@@ -1,0 +1,2 @@
+# execute the following command in Terminal to run application:
+python3 -m streamlit run Home.py
